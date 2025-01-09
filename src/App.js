@@ -1,9 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Gettingdata from './Gettingdata';
 
 function App() {
   return (
-    <div></div>
+    <div>
+      <Gettingdata />
+    </div>
   );
 }
 
