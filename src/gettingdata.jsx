@@ -11,6 +11,7 @@ function Gettingdata() {
             const result = await response.json();
             setData(result);
             console.log(result.message.message)
+            setReply('');
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -22,11 +23,10 @@ function Gettingdata() {
             <h1>API Data</h1>
             <form
                 onSubmit={(e) => { e.preventDefault(); fetchData(); }} >
-                <input type="text" onChange={(e) => setReply(e.target.value)} />
+                <input type="text" value={reply} onChange={(e) => setReply(e.target.value)} />
             </form>
             {data ? (<p>Message : {data.message.message}</p>) : (<p>Talk to me...</p>)}
         </div>
-
     );
 }
 
