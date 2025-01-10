@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 function Gettingdata() {
     const [data, setData] = useState();
@@ -20,10 +20,13 @@ function Gettingdata() {
     return (
         <div>
             <h1>API Data</h1>
-            <input type="text" onChange={(e) => setReply(e.target.value)} />
-            {data ? (<p>Message :{data.message.message}</p>) : (<p>Talk to me...</p>)}
-            <button onClick={fetchData}>Submit</button>
+            <form
+                onSubmit={(e) => { e.preventDefault(); fetchData(); }} >
+                <input type="text" onChange={(e) => setReply(e.target.value)} />
+            </form>
+            {data ? (<p>Message : {data.message.message}</p>) : (<p>Talk to me...</p>)}
         </div>
+
     );
 }
 
