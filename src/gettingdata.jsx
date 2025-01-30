@@ -19,9 +19,7 @@ function Gettingdata() {
     async function fetchData(random, message) {
         console.log('Fetching data with message:', message, 'and random:', random);
         try {
-            const response = await fetch(
-                `https://www.personalityforge.com/api/chat/index.php?apiKey=TtDcXGyNzimVDe0R&chatBotID=63906&message=${encodeURIComponent(message)}&externalID=abc-${random}`
-            );
+            const response = await fetch(`https://www.personalityforge.com/api/chat/index.php?apiKey=TtDcXGyNzimVDe0R&chatBotID=63906&message=${encodeURIComponent(message)}&externalID=abc-${random}`);
             const result = await response.json();
             setData(result);
             console.log(result.message.message);
@@ -31,26 +29,20 @@ function Gettingdata() {
     }
 
     return (
-        <div>
-            <h1>API Data</h1>
-            {data ? (
-                <p>Message : {data.message.message}</p>
-            ) : (
-                <p>Loading...</p>
-            )}
+        <div className='main'>
+            <h1 className='main-heading'>Chat Bot</h1>
+            {data ? (<p>Message  {data.message.message}</p>) : (<p>Loading...</p>)}
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
                     console.log('Using random number on form submit:', randomNum);
-                    fetchData(randomNum, reply); // Use the existing random number
-                    setReply(''); // Clear the input field
-                }}
-            >
+                    fetchData(randomNum, reply);
+                    setReply('')
+                }}>
                 <input
                     type="text"
                     value={reply}
-                    onChange={(e) => setReply(e.target.value)}
-                />
+                    onChange={(e) => setReply(e.target.value)} />
             </form>
         </div>
     );
