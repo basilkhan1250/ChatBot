@@ -1,10 +1,10 @@
 import './App.css';
-import Gettingdata from './Gettingdata';
+import Gettingdata from './gettingdata';
 
 function App() {
   return (
     <div>
-      <Gettingdata />
+      <Gettingdata></Gettingdata>
     </div>
   );
 }
