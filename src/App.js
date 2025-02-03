@@ -1,5 +1,5 @@
 import './App.css';
-import Gettingdata from './gettingdata';
+import Gettingdata from './component/Gettingdata.jsx';
 
 function App() {
   return (
