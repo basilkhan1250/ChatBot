@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Gettingdata() {
+export function Gettingdata() {
     const [data, setData] = useState();
     const [reply, setReply] = useState('');
     const [randomNum, setRandomNum] = useState();
@@ -48,4 +48,4 @@ function Gettingdata() {
     );
 }
 
-export default Gettingdata;
+// export default Gettingdata;
