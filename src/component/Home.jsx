@@ -7,9 +7,9 @@ function Home() {
             <nav>
                 <Link to="/signup">Signup</Link>
                 <Link to="/login">Login</Link>
-                <Link to="/gettingdata">Gettingdata</Link>
+                {/* <Link to="/gettingdata"></Link> */}
             </nav>
-            
+
             <h2>Home</h2>
         </div>
     );
