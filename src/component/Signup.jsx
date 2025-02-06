@@ -2,6 +2,7 @@ import { auth } from "../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
+import SignInWithGoogle from "./SignInWithGoogle";
 
 function Signup() {
     const [email, setEmail] = useState("");
@@ -24,6 +25,7 @@ function Signup() {
             <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
             <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
             <button onClick={handleSignup}>Sign Up</button>
+            <SignInWithGoogle />
         </div>
     );
 }

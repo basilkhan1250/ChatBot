@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Logout from './Logout';
 
 export default function Gettingdata() {
     const [data, setData] = useState();
@@ -44,6 +45,7 @@ export default function Gettingdata() {
                     value={reply}
                     onChange={(e) => setReply(e.target.value)} />
             </form>
+            <Logout />
         </div>
     );
 }
