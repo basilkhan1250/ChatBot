@@ -14,7 +14,7 @@ function SignInWithGoogle() {
                 toast.success("Sign In With Google Successful!", {
                     position: "top-center"
                 });
-                window.location.href = "/gettingdata";
+                window.location.href = "/Login";
             }
         })
     };

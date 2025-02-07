@@ -11,11 +11,13 @@ function Login() {
     const handleLogin = async () => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
+            console.log(email, password);
             alert("Login Successful!");
             navigate("/gettingdata");
         } catch (error) {
-            console.error(error.message);
-            alert(error.message);
+            console.error("Error Code:", error.code);
+            console.error("Error Message:", error.message);
+            alert(`Error: ${error.code}`);
         }
     };
 

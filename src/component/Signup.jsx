@@ -14,8 +14,10 @@ function Signup() {
             await createUserWithEmailAndPassword(auth, email, password);
             alert("Signup Successful!");
             navigate("/login");
+            console.log(email, password);
         } catch (error) {
             alert(error.message);
+            console.log(email, password);
         }
     };
 
